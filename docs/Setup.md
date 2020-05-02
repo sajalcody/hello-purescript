@@ -4,6 +4,7 @@ This setup uses [**pulp**](https://github.com/sajalcody/hello-purescript/blob/ma
 
 - [Project Initialisation, building, running](https://github.com/sajalcody/hello-purescript/blob/master/docs/Setup.md#project-initialisation)
 - [Starting with an existing project](https://github.com/sajalcody/hello-purescript/blob/master/docs/Setup.md#starting-with-an-existing-project)
+- [Installing a new dependency](https://github.com/sajalcody/hello-purescript/blob/master/docs/Setup.md#installing-a-new-dependency)
 - [PSCi Setup](https://github.com/sajalcody/hello-purescript/blob/master/docs/Setup.md#psci-setup)
 
 >### Project Initialisation
@@ -71,6 +72,14 @@ or
 $ npm i
 $ bower i
 ```
+## Installing a new dependency
+A new dependency can be installed either by
+1. Manually adding in `bower.json` and reinstalling the dependencies.
+2. Using bower
+```sh
+$ bower install --save purescript-package-name
+```
+This command will install the dependency and will add it `bower.json`.
 ## PSCi Setup
 
 PSCi -> PureSCript Interactive: REPL(read-eval-print loop) for PureScript
