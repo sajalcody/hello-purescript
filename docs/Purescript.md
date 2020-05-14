@@ -6,15 +6,6 @@
 - indentation sensitive
 - Developed by Phil Freeman.
 
-[Purescript website](https://www.purescript.org/)
-
-[Purescript documentation](https://github.com/purescript/documentation): Documentation for the PureScript language, compiler, and tools.
-
-[Purescript Book](https://book.purescript.org/): Purescript by Example, by Phil Freeman
-
-[Original Book](https://leanpub.com/purescript/read)
-[Github repo](https://github.com/paf31/purescript-book)
-
 **PureScript Types**
 - `Number` 1.0
 - `String` "purescript"
@@ -30,12 +21,24 @@
 - Functions
 
 **PureScript Operators**
-- `(<>)` Diamond operator for concatenation
-- `($)`  Right Associative, Low Precedence operator , alias to `apply`
-- `(<<<)` Backward Composition operator
-- `(>>>)` Forward Composition operator
-- `(<$>)` Left-associative map operator
+- `(<>)` Diamond operator for concatenation, alias for `append`
+- `($)`  Right Associative, Low Precedence operator , alias for `apply`
+- `(>>=)` Bind operator
+- `(<<<)` Backward Composition operator, alias for `compose`
+- `(>>>)` Forward Composition operator, alias for `composeFlipped`
+- `(<$>)` Left-associative map operator, alias for `map`
 
 **Other Concepts**
+- Currying
 - Eta Conversion
 - point-free form: functions defined without reference to their arguments.
+
+## Resources
+
+- [Purescript website](https://www.purescript.org/)
+
+- [Purescript documentation](https://github.com/purescript/documentation): Documentation for the PureScript language, compiler, and tools.
+
+- [Purescript Book](https://book.purescript.org/): Purescript by Example, by Phil Freeman
+
+- [Original Book](https://leanpub.com/purescript/read) and [Github repo](https://github.com/paf31/purescript-book)

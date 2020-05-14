@@ -4,6 +4,7 @@ import Prelude
 
 import Ch03.AddressBook (AddressBook, Entry, emptyBook, insertEntry, findEntry, showEntry)
 import Data.Maybe (Maybe)
+-- import Data.Functor (map)
 import Effect (Effect)
 import Effect.Console (logShow)
 
@@ -22,6 +23,7 @@ book0 = emptyBook
 
 printEntry :: String -> String -> AddressBook -> Maybe String
 printEntry firstName lastName book = showEntry <$> findEntry firstName lastName book
+-- printEntry firstName lastName book = map showEntry $ findEntry firstName lastName book
 
 mainCh03 :: Effect Unit
 mainCh03 = do

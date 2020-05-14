@@ -54,7 +54,7 @@ Write a function removeDuplicates which removes duplicate address book entries w
 -}
 
 removeDuplicates :: AddressBook -> AddressBook
-removeDuplicates book = nubBy equalityCheck book
+removeDuplicates = nubBy equalityCheck -- here, book arg can be skipped due to Currying
   where
     equalityCheck :: Entry -> Entry -> Boolean
     equalityCheck a b = a.firstName == b.firstName
