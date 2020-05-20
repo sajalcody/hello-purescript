@@ -28,6 +28,10 @@
 - `(>>>)` Forward Composition operator, alias for `composeFlipped`
 - `(<$>)` Left-associative map operator, alias for `map`
 
+**Type Classes**
+- `Show`
+- `Generic`
+
 **Other Concepts**
 - Currying
 - Eta Conversion
