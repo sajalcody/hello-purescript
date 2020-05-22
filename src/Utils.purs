@@ -11,3 +11,4 @@ foreign import getTimeStrEff :: Effect String
 foreign import getTimeStr :: String
 foreign import getId :: Effect Int
 foreign import getDummyEffV :: String
+foreign import callVersion :: Int

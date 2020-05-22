@@ -29,7 +29,10 @@ showTimeStr = getTimeStr
 showCallDummyF :: String
 showCallDummyF = getDummyEffV
 
--- showId :: Effect Unit
+showVersion :: Int
+showVersion = callVersion
+
+showId :: Effect String
 showId = getId <#> show
 
 {- Doubts

@@ -43,7 +43,7 @@ exports.getId = function(){
     return window.id;
 }
 
-// dummyF = "dummy Value";
+dummyF = "dummy Value";
 
 callDummyF = function(){
     try{
@@ -56,3 +56,18 @@ callDummyF = function(){
 }
 
 exports.getDummyEffV = callDummyF();
+
+// var version = "1.2.3";
+
+var getVersion = function(){
+    try {
+        var vArray = version.split('.');
+        return parseInt(vArray[0]);
+    }
+    catch (e){
+        console.log(e.message + ". Defaulting to 0");
+        return 0;
+    }
+}
+
+exports.callVersion = getVersion();
