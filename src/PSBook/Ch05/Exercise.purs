@@ -1,6 +1,10 @@
 module Ch05.Exercise where
 
 import Prelude
+import Ch03.AddressBook (Entry)
+import Ch03.Assignment (entry1,entry2)
+import Data.Array.Partial (tail)
+import Partial.Unsafe (unsafePartial)
 
 -- GCD using pattern matching
 gcd :: Int -> Int -> Int
@@ -26,3 +30,32 @@ fromString _ = false
 toString :: Boolean -> String
 toString true = "true"
 toString false = "false"
+
+isEmpty :: forall a. Array a -> Boolean
+isEmpty [] = true
+isEmpty _ = false
+
+{-Checkout type for showPersom after commenting type signature-}
+showPerson :: {first :: String, last :: String} -> String
+showPerson {first: x, last: y} = x <> " " <> y
+-- OR showPerson p = p.first <> " " <> p.last
+{- Test Cases
+With type signature: showPerson {first: "Sajal", last: "Agrawal"}
+without type sign.: showPerson {first: "Sajal", last: "Agrawal", lang: "PureScript"}
+-}
+
+liveInLA :: Entry -> Boolean
+liveInLA {address: {state: "LA"}} = true
+liveInLA _ = false
+
+isEqual :: forall a. Eq a => a -> a -> Boolean
+isEqual a b | a == b = true
+            | otherwise = false
+-- WRONG: isEqual x x = true
+
+-- Longest Zero Suffix
+-- lzs :: Array Int -> Array Int
+-- lzs [] = []
+-- lzs xs = case sum xs of
+--           0 -> xs
+--           _ -> 

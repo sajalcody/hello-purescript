@@ -32,9 +32,13 @@ showCallDummyF = getDummyEffV
 showVersion :: Int
 showVersion = callVersion
 
+showCallfuncWith2Param :: Effect Unit
+showCallfuncWith2Param = callfuncWith2Param "first param " >>= log
+
 showId :: Effect String
 showId = getId <#> show
 
 {- Doubts
 -> Control.Monad.Effect.Console vs Effect.Console
 -}
+-- =<<

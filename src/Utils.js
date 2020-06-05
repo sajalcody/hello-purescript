@@ -38,6 +38,10 @@ exports.getTimeStr = (new Date()).toISOString();
 //     return Date.now;
 // }
 
+exports.unixToRFC = function(t){
+    return (new Date(t)).toISOString();
+}
+
 exports.getId = function(){
     window.id = window.id || 0;
     return window.id;
@@ -57,7 +61,7 @@ callDummyF = function(){
 
 exports.getDummyEffV = callDummyF();
 
-// var version = "1.2.3";
+var version = "1.2.3";
 
 var getVersion = function(){
     try {
@@ -71,3 +75,14 @@ var getVersion = function(){
 }
 
 exports.callVersion = getVersion();
+
+var funcWith2Param = function(firstP, secondP){
+    console.log (firstP + " " + secondP);
+}
+
+exports.callfuncWith2Param = function(firstP){
+    return function(){
+        // return funcWith2Param(firstP, "secondP by callfuncWith2Param");
+        funcWith2Param(firstP)("secondP by callfuncWith2Param")();
+    }
+}
