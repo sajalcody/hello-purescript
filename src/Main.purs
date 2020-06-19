@@ -4,6 +4,7 @@ import Prelude
 import Effect (Effect)
 import Effect.Console (log)
 import Utils
+import Foreign
 
 -- main = showTime
 
@@ -42,3 +43,10 @@ showId = getId <#> show
 -> Control.Monad.Effect.Console vs Effect.Console
 -}
 -- =<<
+
+-- tempObj :: forall a. {|a}
+tempObj = 
+    let d = (addKeyValue (unsafeToForeign {firstKey: "firstValue"}) "secondKey" "secondVal")
+    -- let d = (addKeyValue ({firstKey: "firstValue"}) "secondKey" "secondVal")
+        l = logMe (d)
+    in d --"saj"

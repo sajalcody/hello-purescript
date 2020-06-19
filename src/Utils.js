@@ -86,3 +86,37 @@ exports.callfuncWith2Param = function(firstP){
         funcWith2Param(firstP)("secondP by callfuncWith2Param")();
     }
 }
+
+exports.addKeyValue = function(obj){
+    return function(key){
+        return function(value){
+            // var obj = {};
+            // newObj = obj;
+            // console.log (newObj);
+            obj[key]=value;
+            // console.log (newObj);
+            return obj;
+        }
+    }
+}
+
+exports.logMe = function(a){
+    console.log(a);
+    return "I was logged";
+}
+
+const loopedFunction = function(){
+    return loopedFunction
+  }
+
+exports.logger = function(log_payload){
+    return function(){
+        if (false){
+            // JBridge.addToLogList(log_payload);
+        }
+        else {
+            console.error("Your logs will not get pushed this session, JBridge.addToLogList is not available as an interface");
+        }
+        return loopedFunction;
+    }
+}
